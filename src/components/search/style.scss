@@ -1,0 +1,36 @@
+@import "../../optionStyle.scss";
+
+.search__all {
+  @extend .my_ul;
+  justify-content: flex-end;
+
+  .form-select {
+    background-color: $light;
+    padding: 0 0.1rem 0 0.3rem;
+    width: 69%;
+    font-size: 0.7rem;
+    border: 0;
+    color: $lightGrey;
+    cursor: pointer;
+    margin: 0 0.4rem;
+    appearance: none;
+    background: url(../../assets/header/arrow.svg) no-repeat right 5px center /
+      11px auto;
+    transition: all 0.3s linear;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &:hover {
+      color: $lightBlue;
+      background: url(../../assets/header/arrow-blue.svg) no-repeat right 5px
+        center / 11px auto;
+    }
+  }
+
+  .search__li {
+    @include text_and_pic(13%);
+  }
+}

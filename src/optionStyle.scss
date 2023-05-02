@@ -1,0 +1,40 @@
+$btnGrey: rgb(229, 229, 229);
+$green: rgb(0, 167, 117);
+$darkGrey: rgb(52, 52, 52);
+$lightGrey: rgb(125, 125, 125);
+$white: rgb(255, 255, 255);
+$light: rgb(237, 237, 237);
+$dark: rgb(9, 19, 54);
+$blue: rgb(0, 4, 105);
+$lightBlue: rgb(0, 44, 251);
+
+$sizer: 0.7rem;
+
+.my_ul {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0;
+  color: $lightGrey;
+  list-style-type: none;
+}
+
+@mixin text_and_pic($width) {
+  width: $width;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: $sizer;
+
+  p {
+    color: $lightGrey;
+    margin: 0;
+  }
+
+  img {
+    margin: 0 0.2rem;
+  }
+}

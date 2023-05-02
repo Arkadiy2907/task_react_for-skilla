@@ -1,0 +1,64 @@
+@import "../../optionStyle.scss";
+
+.player {
+  background-color: rgb(225, 225, 225);
+  max-height: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+
+  .play__button {
+    background: none;
+    border: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .time {
+    color: $dark;
+    padding: 0.1rem;
+    margin: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .current__time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .time__number {
+      margin-left: 1rem;
+      margin-bottom: -0.2rem;
+    }
+
+    .time__line {
+      -webkit-appearance: none;
+      height: 0.2rem;
+      border-radius: 0.2rem;
+      background: #adbfdf;
+      background-image: linear-gradient(#002cfb, rgb(0, 44, 251));
+      background-repeat: no-repeat;
+      cursor: pointer;
+      margin-bottom: 0.7rem;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 0.2rem;
+        width: 0.2rem;
+        background: rgb(0, 44, 251);
+        cursor: pointer;
+      }
+
+      &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+      }
+    }
+  }
+}

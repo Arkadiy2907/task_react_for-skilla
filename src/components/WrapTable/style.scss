@@ -1,0 +1,148 @@
+@import "../../optionStyle.scss";
+
+.aside {
+  flex-direction: column;
+  background-color: $dark;
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding: 0.5rem 0 0;
+  font-family: "Roboto", sans-serif;
+
+  .logo {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .primary__nav {
+    .aside__button {
+      margin: 2rem 1.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $sizer;
+
+      img {
+        margin-left: 0.5rem;
+      }
+
+      &:last-child {
+        margin-top: 0.5rem;
+
+        img {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  min-height: 100vh;
+  color: $lightGrey;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+
+  .header {
+    @extend .my_ul;
+    background-color: $white;
+    padding: 0 1.4rem 0 1.7rem;
+    height: 3rem;
+
+    &:nth-child(1) {
+      font-size: $sizer;
+    }
+
+    .wrap__call {
+      width: 40%;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .search {
+      display: flex;
+      justify-content: flex-end;
+      width: 11%;
+    }
+
+    .user {
+      @include text_and_pic(25%);
+    }
+  }
+
+  .wrapper__content {
+    background-color: $light;
+    height: 94%;
+
+    .balance {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      align-items: center;
+      max-height: 4rem;
+      padding: 0 1rem;
+
+      img {
+        padding: 0.5rem 0.1rem;
+
+        &:first-child {
+          margin-right: 1.5rem;
+        }
+      }
+
+      .form__select-date {
+        width: 4.5rem;
+        background-color: $light;
+        padding: 0 0.5rem 0 1.5rem;
+        font-size: 0.7rem;
+        border: 0;
+        color: $lightGrey;
+        cursor: pointer;
+        appearance: none;
+        background: url(../../assets/wrapTable/icon-calendar.svg) no-repeat left
+          5px center / 15px auto;
+        transition: all 0.3s linear;
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+
+        &:hover {
+          color: $lightBlue;
+          background: url(../../assets/wrapTable/icon-calendar-blue.svg)
+            no-repeat left 5px center / 15px auto;
+        }
+      }
+
+      .span {
+        color: $lightGrey;
+        cursor: pointer;
+        transition: all 0.3s linear;
+
+        &:hover {
+          color: $lightBlue;
+        }
+      }
+    }
+
+    .filter {
+      @extend .my_ul;
+      flex-wrap: nowrap;
+      padding: 0 1rem;
+
+      .search__call {
+        @include text_and_pic(15%);
+      }
+    }
+  }
+
+  .table__wrap {
+    background-color: $light;
+    padding: 1rem 1.5rem 0;
+    border-radius: 0.2rem;
+    width: 100%;
+  }
+}
