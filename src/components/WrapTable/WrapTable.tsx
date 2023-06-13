@@ -89,7 +89,7 @@ const WrapTable = () => {
           </Col>
           <Col md={10} sm={12} className="main">
             <ul className="header">
-              <li>
+              <li className="dateToday">
                 <time>{getDate()}</time>
               </li>
               <li className="wrap__call">
@@ -102,7 +102,7 @@ const WrapTable = () => {
                 <p>ИП Сидорова Александра Михайловна</p>
                 <img src={arrow} alt="arrow" />
               </li>
-              <li>
+              <li className="avatar">
                 <img src={avatar} alt="avatar" />
               </li>
             </ul>

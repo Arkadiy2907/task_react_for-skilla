@@ -2,12 +2,12 @@
 
 .player {
   background-color: rgb(225, 225, 225);
-  max-height: 2rem;
+  max-height: 1.9rem;
   border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 1rem;
+  padding: 0.2rem;
 
   .play__button {
     background: none;

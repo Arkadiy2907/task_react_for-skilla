@@ -7,16 +7,21 @@
   .form-select {
     background-color: $light;
     padding: 0 0.1rem 0 0.3rem;
-    width: 69%;
+    // width: 69%;
+    text-align: center;
     font-size: 0.7rem;
     border: 0;
     color: $lightGrey;
     cursor: pointer;
     margin: 0 0.4rem;
     appearance: none;
-    background: url(../../assets/header/arrow.svg) no-repeat right 5px center /
+    background: url(../../assets/header/arrow.svg) no-repeat right 2px center /
       11px auto;
     transition: all 0.3s linear;
+
+    option {
+      background-color: $white;
+    }
 
     &:focus {
       box-shadow: none;
@@ -31,6 +36,20 @@
   }
 
   .search__li {
-    @include text_and_pic(13%);
+    @include text_and_pic(6.5rem);
+  }
+}
+
+@media all and (max-width: 992px) {
+  .search__all {
+    .search__li,
+    .form-select {
+      font-size: 0.5rem;
+      background: none;
+
+      img {
+        visibility: hidden;
+      }
+    }
   }
 }
