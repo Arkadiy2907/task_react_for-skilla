@@ -1,0 +1,8 @@
+export const fakeDataApi = [{
+  abuse: [], candidate_id: 0, candidate_link: "", candidate_name: "", candidate_vacancy_name: "", contact_company: "", contact_name: "", date: "2023-08-25 20:14:33", date_notime: "2023-08-25", disconnect_reason: "Вызов завершен вызывающим абонентом", errors: [], from_extension: "", from_number: "791**89**", from_site: 0, id: 6869546, in_out: 1, is_skilla: 0, line_name: "", line_number: "sip**se**", partner_data: { id: '578', name: 'ООО "ГРУЗЧИКОВ-СЕРВИС СПБ"', phone: '74951205096' }, partnership_id: "578", person_avatar: "https://lk.skilla.ru/img/noavatar.jpg", person_id: 4730, person_name: "**", person_surname: "**", record: "", results: [], source: "", stages: [], status: "Не дозвонился", time: 0, to_extension: "671", to_number: "sip**r_**"
+},
+{
+  abuse: [], candidate_id: 0, candidate_link: "", candidate_name: "", candidate_vacancy_name: "", contact_company: "", contact_name: "", date: "2023-08-25 20:14:33", date_notime: "2023-08-27", disconnect_reason: "Вызов завершен вызывающим абонентом", errors: [], from_extension: "", from_number: "791**89**", from_site: 0, id: 6869503, in_out: 1, is_skilla: 0, line_name: "", line_number: "sip**se**", partner_data: { id: '578', name: 'ООО "ГРУЗЧИКОВ-СЕРВИС СПБ"', phone: '74951205096' }, partnership_id: "578", person_avatar: "https://lk.skilla.ru/img/noavatar.jpg", person_id: 2726, person_name: "**", person_surname: "**", record: "MToxMDA2NzYxNToxNDMwMDM3NzExNzow", results: [{ type: 'is_new', title: 'Новый', tooltip: '' }], source: "", stages: [], status: "Дозвонился", time: 88, to_extension: "101", to_number: "sip**10**"
+}
+
+] 

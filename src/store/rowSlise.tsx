@@ -1,34 +1,38 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { changeObgDate } from "../components/helpers/helpersFunc";
-import { IDate, TableBodyProps, RowState, RejectPayload } from "../types";
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { changeObgDate } from '../components/helpers/helpersFunc';
+import { fakeDataApi } from '../components/helpers/FakeApi';
+import { IDate, TableBodyProps, RowState, RejectPayload } from '../types';
 
 const initialState: RowState = {
   rows: [],
-  status: "idle",
+  status: 'idle',
   error: null,
 };
 
-const https = "https://api.skilla.ru/mango/getList";
+const https = 'https://api.skilla.ru/mango/getList';
 
 export const fetchRows = createAsyncThunk<
   { results: TableBodyProps[] },
   IDate,
   { rejectValue: RejectPayload }
->("rows/fetchRows", async (objDate: IDate, { rejectWithValue }) => {
+>('rows/fetchRows', async (objDate: IDate, { rejectWithValue }) => {
   try {
     const objDateNow = changeObgDate(new Date());
     const dateStart = `date_start=${objDate.year}-${objDate.month}-${objDate.day}`;
     const dateEnd = `date_end=${objDateNow.year}-${objDateNow.month}-${objDateNow.day}`;
     const response = await fetch(`${https}?${dateStart}&${dateEnd}&limit=75`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer testtoken",
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer testtoken',
       },
     });
 
     if (!response.ok) {
-      throw new Error("Server Error!");
+      return {
+        results: fakeDataApi,
+      };
+      // throw new Error("Server Error!");
     }
 
     const data = await response.json();
@@ -38,19 +42,19 @@ export const fetchRows = createAsyncThunk<
     if (error instanceof Error) {
       return rejectWithValue({ rows: null, error: error.message });
     } else {
-      return rejectWithValue({ rows: null, error: "Unknown error occurred." });
+      return rejectWithValue({ rows: null, error: 'Unknown error occurred.' });
     }
   }
 });
 
 const rowSlice = createSlice({
-  name: "rows",
+  name: 'rows',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchRows.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
         state.error = null;
       })
       .addCase(
@@ -58,16 +62,16 @@ const rowSlice = createSlice({
         (state, action: PayloadAction<{ results: TableBodyProps[] }>) => {
           state.rows = action.payload.results;
           state.error = null;
-          state.status = "resolved";
+          state.status = 'resolved';
         }
       )
       .addCase(fetchRows.rejected, (state, action) => {
-        if (action.payload && typeof action.payload === "object") {
-          state.error = action.payload.error ?? "Error!";
+        if (action.payload && typeof action.payload === 'object') {
+          state.error = action.payload.error ?? 'Error!';
         } else {
-          state.error = action.payload ?? "Error!";
+          state.error = action.payload ?? 'Error!';
         }
-        state.status = "FETCH_FAILED";
+        state.status = 'FETCH_FAILED';
       });
   },
 });
